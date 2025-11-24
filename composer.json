@@ -18,7 +18,7 @@
         "squizlabs/php_codesniffer": "*"
     },
     "scripts": {
-        "check-style": "phpcs --standard=PSR12 src",
-        "fix-style": "phpcbf --standard=PSR12 src"
+        "check-style": "phpcs --standard=PSR12 --ignore=src/views src",
+        "fix-style": "phpcbf --standard=PSR12 --ignore=src/views src"
     }
 }
