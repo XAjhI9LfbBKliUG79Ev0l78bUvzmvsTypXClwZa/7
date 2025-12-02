@@ -15,14 +15,17 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
     php composer-setup.php --install-dir=/usr/local/bin --filename=composer && \
     php -r "unlink('composer-setup.php');"
 
-# Copy composer files
-COPY composer.json composer.lock ./
+# Copy application files
+COPY . .
 
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
-# Copy application files
-COPY . .
+# Copy apache config
+COPY apache.conf /etc/apache2/sites-available/000-default.conf
+
+# Enable apache rewrite module
+RUN a2enmod rewrite
 
 # Expose port 80
 EXPOSE 80
