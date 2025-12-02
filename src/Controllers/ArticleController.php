@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Article;
+use App\Models\Article;
 
 class ArticleController
 {
