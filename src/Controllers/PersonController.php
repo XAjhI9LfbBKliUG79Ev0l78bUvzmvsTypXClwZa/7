@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Person;
+use App\Models\Person;
 
 class PersonController
 {
